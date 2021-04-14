@@ -26,7 +26,10 @@ def webhook(request):
     elif action == 'division':
     	fulfillmentText = {'fulfillmentText': n1/n2}
 
-    else:
+    elif action == 'multiplication':
     	fulfillmentText = {'fulfillmentText': n1*n2}
+    
+    else:
+        fulfillmentText = {'fulfillmentText': "Invalid operation!!"}
     # return response
     return JsonResponse(fulfillmentText, safe=False)
